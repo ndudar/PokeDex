@@ -1,4 +1,4 @@
-# PokeDex
+# PokeDex 🐉
 🔎 an exploration of React Router 🔍
 
 ## Project Overview:
