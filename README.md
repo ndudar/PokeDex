@@ -1,5 +1,5 @@
 # PokeDex
-an exploration of React Router
+🔎 an exploration of React Router 🔍
 
 ## Project Overview:
 *The purpose of this project is to showcase the capabilites of React Router. Namely:*
