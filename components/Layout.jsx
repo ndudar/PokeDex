@@ -1,5 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+
+//components
 import Header from "./Header";
 import Footer from "./Footer";
 
@@ -8,7 +10,7 @@ export default function Layout() {
     <div>
       <Header />
       <main>
-        <h1>We're in the Layout!</h1>
+        <Outlet />
       </main>
       <Footer />
     </div>
