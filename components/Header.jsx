@@ -6,6 +6,7 @@ export default function Header() {
     <header>
       <Link to="/">Home</Link>
       <nav>
+        <NavLink to="pokemon">Pokemon</NavLink>
         <NavLink to="login">Secret Stuff</NavLink>
       </nav>
     </header>
