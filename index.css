@@ -2,6 +2,7 @@
   box-sizing: border-box;
 }
 
+/*** decide on body background color, font later ***/
 html,
 body {
     margin: 0;
@@ -37,6 +38,7 @@ header {
   padding-block: 10px;
 }
 
+/*** decide on logo color, text, size later ***/
 header .site-logo {
   color: black;
   margin-right: auto;
@@ -45,6 +47,7 @@ header .site-logo {
   font-size: 25px;
 }
 
+/*** decide on colors and hover later ***/
 header a {
   text-decoration: none;
   color: #4D4D4D;
@@ -61,6 +64,7 @@ main {
   margin-bottom: 84px;
 }
 
+/*** decide on footer color etc later ***/
 footer {
   background-color: #161616;
   color: #AAAAAA;

@@ -11,7 +11,7 @@ import {
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Pokemon from "./pages/Pokemon/Pokemon";
+import Pokemon, { loader as pokemonLoader } from "./pages/Pokemon/Pokemon";
 import PokemonDetail from "./pages/Pokemon/PokemonDetail";
 
 const router = createBrowserRouter(
@@ -19,7 +19,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<Layout />}>
       <Route index element={<Home />} />
       <Route path="login" element={<Login />} />
-      <Route path="pokemon" element={<Pokemon />} />
+      <Route path="pokemon" element={<Pokemon />} loader={pokemonLoader} />
       <Route path="pokemon/:id" element={<PokemonDetail />} />
     </Route>
   )

@@ -1,9 +1,8 @@
 import React from "react"
 
+//might be nice to put my links here?
 export default function Footer() {
   return (
-    <div>
-      <h1>I'm the footer!</h1>
-    </div>
+    <footer>I'm the footer!</footer>
   )
 }
