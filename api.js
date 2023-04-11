@@ -10,5 +10,5 @@ export async function getPokemon() {
       }
   }
   const data = await res.json()
-  return data
+  return data.results
 }
