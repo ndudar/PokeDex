@@ -13,7 +13,8 @@ export default function Pokemon() {
 
   function renderPokemonElements(pokemons) {
     const displayedPokemons = pokemons.results;
-    console.log(pokemons)
+    const id = pokemons.results[0].url.slice(-3, -1)
+    console.log(getPokemon(pokemons.results[0].url.slice(-3, -1)))
 
     const pokemonsElements = displayedPokemons.map((pokemon) => (
       <div key={pokemon.name}>
