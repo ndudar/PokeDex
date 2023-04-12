@@ -12,7 +12,7 @@ export default function Pokemon() {
   const dataPromise = useLoaderData();
 
   function renderPokemonElements(pokemons) {
-    const displayedPokemons = pokemons;
+    const displayedPokemons = pokemons.results;
     console.log(pokemons)
 
     const pokemonsElements = displayedPokemons.map((pokemon) => (
