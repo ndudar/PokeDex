@@ -2,7 +2,7 @@ import React from "react";
 import { defer, useLoaderData, Await } from "react-router-dom";
 
 //api
-import { getPokemon } from "../../api";
+import { getPokemon, getSinglePokemon } from "../../api";
 
 export function loader() {
   return defer({ pokemons: getPokemon() });
@@ -11,10 +11,11 @@ export function loader() {
 export default function Pokemon() {
   const dataPromise = useLoaderData();
 
-  function renderPokemonElements(pokemons) {
+   function renderPokemonElements(pokemons) {
     const displayedPokemons = pokemons.results;
-    const id = pokemons.results[0].url.slice(-3, -1)
-    console.log(getPokemon(pokemons.results[0].url.slice(-3, -1)))
+    // const id = pokemons.results[0].url.slice(-3, -1)
+    // const promise = await getPokemon(id)
+    // console.log(promise)
 
     const pokemonsElements = displayedPokemons.map((pokemon) => (
       <div key={pokemon.name}>
