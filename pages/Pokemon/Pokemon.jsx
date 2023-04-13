@@ -11,12 +11,13 @@ export function loader() {
 export default function Pokemon() {
   const dataPromise = useLoaderData();
 
-   function renderPokemonElements(pokemons) {
+  function renderPokemonElements(pokemons) {
     const displayedPokemons = pokemons.results;
     // const id = pokemons.results[0].url.slice(-3, -1)
     // const promise = await getPokemon(id)
     // console.log(promise)
 
+    //turn the innards of this into a separate component and pass pokemon as a prop
     const pokemonsElements = displayedPokemons.map((pokemon) => (
       <div key={pokemon.name}>
         <h3>{pokemon.name}</h3>
