@@ -1,6 +1,6 @@
 //grab all of the pokemon
-export async function getPokemon(id) {
-  const url = id ? `https://pokeapi.co/api/v2/pokemon/${id}` : "https://pokeapi.co/api/v2/pokemon/?offset=20&limit=1279"
+export async function getPokemon() {
+  const url = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1279"
   const res = await fetch(url)
   if (!res.ok) {
       throw {

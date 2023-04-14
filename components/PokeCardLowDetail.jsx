@@ -1,6 +1,10 @@
 import React from "react"
 
-export default function PokeCardLowDetail() {
+//api
+import { getSinglePokemon } from "../api"
+
+export default function PokeCardLowDetail(props) {
+  console.log(props.pokemon)
 
   return (
     <div>
