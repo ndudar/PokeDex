@@ -15,8 +15,7 @@ export async function getPokemon() {
 
 //might need to change the data returned if later I want access to data.next
 
-export async function getSinglePokemon(id) {
-  const url = `https://pokeapi.co/api/v2/pokemon/${id}`
+export async function getSinglePokemon(url) {
   const res = await fetch(url)
   if (!res.ok) {
     throw {

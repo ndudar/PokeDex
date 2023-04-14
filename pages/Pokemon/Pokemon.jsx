@@ -16,11 +16,7 @@ export default function Pokemon() {
 
   function renderPokemonElements(pokemons) {
     const displayedPokemons = pokemons.results;
-    // const id = pokemons.results[0].url.slice(-3, -1)
-    // const promise = await getPokemon(id)
-    // console.log(promise)
-
-    //turn the innards of this into a separate component and pass pokemon as a prop
+   
     const pokemonsElements = displayedPokemons.map((pokemon) => (
       <PokeCardLowDetail pokemon={pokemon} key={pokemon.name}/>
     ))
