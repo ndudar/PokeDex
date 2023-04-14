@@ -1,8 +1,11 @@
 import React from "react";
 import { defer, useLoaderData, Await } from "react-router-dom";
 
+//components
+import PokeCardLowDetail from "../../components/PokeCardLowDetail";
+
 //api
-import { getPokemon, getSinglePokemon } from "../../api";
+import { getPokemon } from "../../api";
 
 export function loader() {
   return defer({ pokemons: getPokemon() });
@@ -19,9 +22,7 @@ export default function Pokemon() {
 
     //turn the innards of this into a separate component and pass pokemon as a prop
     const pokemonsElements = displayedPokemons.map((pokemon) => (
-      <div key={pokemon.name}>
-        <h3>{pokemon.name}</h3>
-      </div>
+      <PokeCardLowDetail pokemon={pokemon} key={pokemon.name}/>
     ))
 
     return (
