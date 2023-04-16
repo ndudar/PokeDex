@@ -18,6 +18,7 @@ export default function PokeCardLowDetail(props) {
   console.log(poke)
 
   return (
+    poke &&
     <div>
       <img src={poke.sprites.front_default}/>
       <h3>{poke.name}</h3>
