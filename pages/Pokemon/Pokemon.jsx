@@ -16,7 +16,7 @@ export default function Pokemon() {
 
   function renderPokemonElements(pokemons) {
     const displayedPokemons = pokemons.results;
-   
+
     const pokemonsElements = displayedPokemons.map((pokemon) => (
       <PokeCardLowDetail pokemon={pokemon} key={pokemon.name}/>
     ))
