@@ -3,7 +3,17 @@ import { useOutletContext } from "react-router-dom"
 
 export default function PokemonMoves() {
   const { pokemon } = useOutletContext()
+
+  const moves = pokemon.moves.map((move) => {
+    return (
+      <p>{move.move.name}</p>
+    )
+  })
+  
   return (
-    <p>Current pokemon is {pokemon.name}. This is the move.</p>
+    <>
+    <p>{pokemon.name} has {moves.length} moves:</p>
+    <div>{moves}</div>
+    </>
   )
 }

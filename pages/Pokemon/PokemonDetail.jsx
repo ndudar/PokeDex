@@ -18,8 +18,6 @@ export default function PokemonDetail() {
     color: "#161616"
 }
 
-  console.log(pokemon)
-
   return (
     <div>
     <div>
