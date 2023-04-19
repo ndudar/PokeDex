@@ -6,10 +6,10 @@ export default function PokemonMoves() {
 
   const moves = pokemon.moves.map((move) => {
     return (
-      <p>{move.move.name}</p>
+      <p key={move.move.name}>{move.move.name}</p>
     )
   })
-  
+
   return (
     <>
     <p>{pokemon.name} has {moves.length} moves:</p>

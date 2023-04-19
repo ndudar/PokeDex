@@ -3,7 +3,25 @@ import { useOutletContext } from "react-router-dom"
 
 export default function PokemonStats() {
   const { pokemon } = useOutletContext()
+
+  console.log(pokemon)
+
+  const types = pokemon.types.map((type) => {
+    return type.type.name
+  })
+
+  const stats = pokemon.stats.map((stat) => {
+    return (
+      <div key={stat.stat.name}>{stat.stat.name}: {stat.base_stat}</div>
+    )
+  })
+
   return (
-    <p>Current pokemon is {pokemon.name}. This is the stat.</p>
+    <>
+    <h3>Stats for {pokemon.name}:</h3>
+    <p>Weight: {pokemon.weight}</p>
+    <p>Types: {types.join(', ')}</p>
+    {stats}
+    </>
   )
 }

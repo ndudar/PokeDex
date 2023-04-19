@@ -34,10 +34,6 @@ export default function PokemonDetail() {
   )
 }
 
-//pokemon.moves.map((move) => {
-  //return (<p>{move.move.name}</p>)
-//})
-
 //pokemon.types (forEach or map) type.type.name
 //weight: pokemon.weight
 
