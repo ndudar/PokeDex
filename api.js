@@ -42,3 +42,18 @@ export async function getSinglePokemonWithId(id) {
   const data = await res.json()
   return data
 }
+
+//this API grabs the evolution chain data for a single pokemon with id
+export async function getPokemonEvolution(id) {
+  const url = `https://pokeapi.co/api/v2/evolution-chain/${id}`
+  const res = await fetch(url)
+  if (!res.ok) {
+    throw {
+      message: "Failed to fetch pokemon evolution info",
+      statusText: res.statusText,
+      status: res.status
+    }
+  }
+  const data = await res.json()
+  return data
+}

@@ -4,8 +4,6 @@ import { useOutletContext } from "react-router-dom"
 export default function PokemonStats() {
   const { pokemon } = useOutletContext()
 
-  console.log(pokemon)
-
   const types = pokemon.types.map((type) => {
     return type.type.name
   })
