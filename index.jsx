@@ -13,6 +13,9 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Pokemon, { loader as pokemonLoader } from "./pages/Pokemon/Pokemon";
 import PokemonDetail, { loader as pokemonDetailLoader } from "./pages/Pokemon/PokemonDetail";
+import PokemonEvolution from "./pages/Pokemon/PokemonEvolution";
+import PokemonMoves from "./pages/Pokemon/PokemonMoves";
+import PokemonStats from "./pages/Pokemon/PokemonStats";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -20,7 +23,11 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="login" element={<Login />} />
       <Route path="pokemon" element={<Pokemon />} loader={pokemonLoader} />
-      <Route path="pokemon/:id" element={<PokemonDetail />} loader={pokemonDetailLoader}/>
+      <Route path="pokemon/:id" element={<PokemonDetail />} loader={pokemonDetailLoader}>
+        <Route path="evolution" element={<PokemonEvolution/>} />
+        <Route path="moves" element={<PokemonMoves/>} />
+        <Route path="stats" element={<PokemonStats/>} />
+      </Route>
     </Route>
   )
 );
