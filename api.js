@@ -56,3 +56,18 @@ export async function getPokemonEvolution(url) {
   const data = await res.json()
   return data
 }
+
+//this API call is part of a chain reaction to get to the evolution information
+//first, I need to make the call to the species API
+export async function getPokemonSpecies(url) {
+  const res = await fetch(url)
+  if (!res.ok) {
+    throw {
+      message: "Failed to fetch pokemon species info",
+      statusText: res.statusText,
+      status: res.status
+    }
+  }
+  const data = await res.json()
+  return data
+}
