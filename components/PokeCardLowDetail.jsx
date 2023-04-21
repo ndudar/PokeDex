@@ -8,6 +8,7 @@ export default function PokeCardLowDetail(props) {
   const url = props.pokemon.url
   const [poke, setPoke] = useState(null)
 
+  //since we don't have access to the poke id, we make the api call with the url
   useEffect(() => {
     async function fetchData() {
       const response = await getSinglePokemon(url)

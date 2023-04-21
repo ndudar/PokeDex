@@ -33,8 +33,3 @@ export default function PokemonDetail() {
     </div>
   )
 }
-
-//pokemon.types (forEach or map) type.type.name
-//weight: pokemon.weight
-
-//maybe stats

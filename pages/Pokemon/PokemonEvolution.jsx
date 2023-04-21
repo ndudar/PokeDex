@@ -11,6 +11,7 @@ export default function PokemonEvolution() {
   const [species, setSpecies] = useState(null)
   const [evolution, setEvolution] = useState(null)
 
+  //first useEffect is making the first step in a domino of API calls
   useEffect(() => {
     async function fetchData() {
       const response = await getPokemonSpecies(speciesUrl)
@@ -19,6 +20,7 @@ export default function PokemonEvolution() {
     fetchData()
   }, [speciesUrl])
 
+  //once we have the species info, we can have the second useEffect call evolution info
   useEffect(() => {
     async function fetchData() {
       if (species) {
@@ -30,8 +32,7 @@ export default function PokemonEvolution() {
     fetchData()
   }, [species])
 
-  //issue: id is not the information we need for the correct evolution information
-  //need to find the link between pokemon id and the api call for evolution
+  //next step: create a recursive func to gather evolution api data
 
   return (
     <>

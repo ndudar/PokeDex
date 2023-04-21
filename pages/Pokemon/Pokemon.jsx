@@ -7,6 +7,7 @@ import PokeCardLowDetail from "../../components/PokeCardLowDetail";
 //api
 import { getPokemon } from "../../api";
 
+//grabs all the pokemon
 export function loader() {
   return defer({ pokemons: getPokemon() });
 }

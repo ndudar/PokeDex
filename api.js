@@ -43,7 +43,7 @@ export async function getSinglePokemonWithId(id) {
   return data
 }
 
-//this API grabs the evolution chain data for a single pokemon with id
+//this API grabs the evolution chain data for a single pokemon with url
 export async function getPokemonEvolution(url) {
   const res = await fetch(url)
   if (!res.ok) {
