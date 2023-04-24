@@ -1,7 +1,7 @@
 {
   "name": "pokedex",
   "version": "1.0.0",
-  "description": "an exploration of React Router test",
+  "description": "an exploration of React Router",
   "main": "index.js",
   "repository": {
     "type": "git",
