@@ -28,7 +28,7 @@ export default function Pokemon() {
   }
 
   return (
-    <div>
+    <div className="pokemon-list-container">
       <h1>Checkout the Pokemon!</h1>
       <React.Suspense fallback={<h2>Loading Pokemon...</h2>}>
         <Await resolve={dataPromise.pokemons}>{renderPokemonElements}</Await>
