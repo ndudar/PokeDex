@@ -32,7 +32,7 @@ export default function PokemonEvolution() {
     fetchData()
   }, [species])
 
-  //next step: create a recursive func to gather evolution api data
+  //recursive func to gather evolution api data:
   const evoChainFunc = (evoChain, array = []) => {
     if (!evoChain.evolves_to.length) array.push(evoChain.species.name)
     else {
@@ -42,10 +42,19 @@ export default function PokemonEvolution() {
     return array
   }
 
+  //rendering the visual of the evolution chain
+  const displayEvolution = (evoArray) => {
+    return evoArray.map((poke) => {
+      return (
+        <p key={poke}>{poke}</p>
+      )
+    })
+  }
+
   return (
     <>
-    {species && <p>pokemon is {pokemon.name}</p>}
-    {evolution && console.log(evoChainFunc(evolution.chain))}
+    {species && <p>pokemon is {pokemon.name}. This is the evolution chain:</p>}
+    {evolution && <div>{displayEvolution(evoChainFunc(evolution.chain))}</div>}
     </>
   )
 }
