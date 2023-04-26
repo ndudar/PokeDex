@@ -77,7 +77,7 @@ footer {
   font-weight: 500;
 }
 
-/*** POKEMON PAGES ***/
+/*** POKEMON LIST PAGE ***/
 
 .pokemon-list-container {
   padding-inline: 23px
@@ -99,4 +99,48 @@ footer {
 .pokemon-tile img {
   max-width: 100%;
   border-radius: 5px;
+}
+
+/*** POKEMON DETAIL PAGE ***/
+
+.pokemon-detail-container {
+  padding-inline: 27px;
+}
+
+/*** fix for later: image too big ***/
+
+.pokemon-detail {
+  display: flex;
+  flex-direction: column;
+  color: #161616;
+}
+
+.pokemon-detail img {
+  border-radius: 5px;
+  margin-block: 47px;
+}
+
+.pokemon-detail h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* maybe change this nav margin bottom later, kind of big */
+
+.pokemon-nav {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.pokemon-nav a {
+  text-decoration: none;
+  color: #4D4D4D;
+  font-weight: 500;
+  padding: 5px 20px;
+}
+
+.pokemon-nav a:hover {
+  color: #161616;
+  text-decoration: underline;
+  font-weight: 600;
 }

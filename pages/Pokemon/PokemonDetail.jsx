@@ -19,12 +19,12 @@ export default function PokemonDetail() {
 }
 
   return (
-    <div>
-    <div>
+    <div className="pokemon-detail-container">
+    <div className="pokemon-detail">
       <h1>{pokemon.name}</h1>
       <img src={pokemon.sprites.front_default} />
     </div>
-    <nav>
+    <nav className="pokemon-nav">
       <NavLink to="moves" style={({ isActive }) => isActive ? activeStyles : null} >Moves</NavLink>
       <NavLink to="stats" style={({ isActive }) => isActive ? activeStyles : null} >Stats</NavLink>
       <NavLink to="evolution" style={({ isActive }) => isActive ? activeStyles : null} >Evolution</NavLink>
