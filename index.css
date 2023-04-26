@@ -90,3 +90,13 @@ footer {
   gap: 34px;
   margin-top: 57px;
 }
+
+.pokemon-tile h3 {
+  color: #161616;
+  text-decoration: none;
+}
+
+.pokemon-tile img {
+  max-width: 100%;
+  border-radius: 5px;
+}

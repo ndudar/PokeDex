@@ -20,9 +20,11 @@ export default function PokeCardLowDetail(props) {
   return (
     poke &&
     <Link to={`/pokemon/${poke.id}`}>
-    <div>
+    <div className="pokemon-tile">
       <img src={poke.sprites.front_default}/>
-      <h3>{poke.name}</h3>
+      <div>
+       <h3>{poke.name}</h3>
+      </div>
     </div>
     </Link>
   )
