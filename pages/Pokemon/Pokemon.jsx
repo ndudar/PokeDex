@@ -23,7 +23,7 @@ export default function Pokemon() {
     ))
 
     return (
-      <div>{pokemonsElements}</div>
+      <div className="pokemon-list">{pokemonsElements}</div>
     )
   }
 
