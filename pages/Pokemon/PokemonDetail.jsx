@@ -21,7 +21,7 @@ export default function PokemonDetail() {
   return (
     <div className="pokemon-detail-container">
     <div className="pokemon-detail">
-      <h1>{pokemon.name}</h1>
+      <h1 className="pokemon-detail-name">{pokemon.name}</h1>
       <img src={pokemon.sprites.front_default} />
     </div>
     <nav className="pokemon-nav">

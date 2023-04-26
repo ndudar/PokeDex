@@ -125,6 +125,10 @@ footer {
   margin-bottom: 10px;
 }
 
+.pokemon-detail-name {
+  padding-inline: 26px;
+}
+
 /* maybe change this nav margin bottom later, kind of big */
 
 .pokemon-nav {
