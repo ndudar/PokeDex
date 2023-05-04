@@ -52,9 +52,9 @@ export default function PokemonEvolution() {
   }
 
   return (
-    <>
+    <div className="pokemon-extra-details-container">
     {species && <p>pokemon is {pokemon.name}. This is the evolution chain:</p>}
     {evolution && <div>{displayEvolution(evoChainFunc(evolution.chain))}</div>}
-    </>
+    </div>
   )
 }

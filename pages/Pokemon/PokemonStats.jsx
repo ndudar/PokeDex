@@ -15,11 +15,11 @@ export default function PokemonStats() {
   })
 
   return (
-    <>
+    <div className="pokemon-extra-details-container">
     <h3>Stats for {pokemon.name}:</h3>
     <p>Weight: {pokemon.weight}</p>
     <p>Types: {types.join(', ')}</p>
     {stats}
-    </>
+    </div>
   )
 }

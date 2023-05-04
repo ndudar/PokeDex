@@ -150,3 +150,9 @@ footer {
   text-decoration: underline;
   font-weight: 600;
 }
+
+.pokemon-extra-details-container {
+  background-color: white;
+  padding: 24px;
+  margin: 30px 26px;
+}

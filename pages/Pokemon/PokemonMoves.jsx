@@ -11,9 +11,9 @@ export default function PokemonMoves() {
   })
 
   return (
-    <>
+    <div className="pokemon-extra-details-container">
     <p>{pokemon.name} has {moves.length} moves:</p>
     <div>{moves}</div>
-    </>
+    </div>
   )
 }
