@@ -111,21 +111,23 @@ footer {
 
 .pokemon-detail {
   display: flex;
-  flex-direction: column;
-  color: #161616;
+  align-items: center;
+  background-color: white;
+  margin-bottom: 15px;
+  padding-block: 18px;
+  padding-left: 24px;
 }
 
 .pokemon-detail img {
+  height: 70px;
   border-radius: 5px;
-  margin-block: 47px;
+  margin-right: 17px;
 }
 
 .pokemon-detail h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-.pokemon-detail-name {
+  font-size: 20px;
+  font-weight: 600;
+  margin-block: 10px;
   padding-inline: 26px;
 }
 
