@@ -83,6 +83,11 @@ footer {
   padding-inline: 23px
 }
 
+.pokemon-list-container button {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
 .pokemon-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -99,6 +104,35 @@ footer {
 .pokemon-tile img {
   max-width: 100%;
   border-radius: 5px;
+}
+
+.pokemon-filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pokemon-filter-buttons>a {
+  margin-right: 15px;
+}
+
+.pokemon-button {
+  height: 34px;
+  padding: 6px 26px;
+  font-style: normal;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  background-color: #E17654;
+  color: #4D4D4D;
+  transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pokemon-button:hover {
+  color: #FFEAD0;
+}
+
+.pokemon-button:focus {
+  outline: none;
 }
 
 /*** POKEMON DETAIL PAGE ***/
