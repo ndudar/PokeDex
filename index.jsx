@@ -17,6 +17,9 @@ import PokemonEvolution from "./pages/Pokemon/PokemonEvolution";
 import PokemonMoves from "./pages/Pokemon/PokemonMoves";
 import PokemonStats from "./pages/Pokemon/PokemonStats";
 
+//sad path
+import NotFound from "./pages/NotFound";
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
@@ -28,6 +31,7 @@ const router = createBrowserRouter(
         <Route path="moves" element={<PokemonMoves/>} />
         <Route path="stats" element={<PokemonStats/>} />
       </Route>
+      <Route path="*" element={<NotFound/>}/>
     </Route>
   )
 );
