@@ -1,5 +1,5 @@
 import React from "react"
-import { useLoaderData, Outlet, NavLink } from "react-router-dom"
+import { useLoaderData, Outlet, NavLink, Link } from "react-router-dom"
 
 //api
 import { getSinglePokemonWithId } from "../../api"
@@ -20,6 +20,7 @@ export default function PokemonDetail() {
 
   return (
     <div className="pokemon-detail-container">
+      <Link to=".." relative="path" className="back-button">&larr; <span>Back to Pokemon</span></Link>
     <div className="pokemon-detail">
       <h1>{pokemon.name}</h1>
       <img src={pokemon.sprites.front_default} />

@@ -158,6 +158,17 @@ footer {
   font-size: 20px;
 }
 
+.back-button {
+  display: block;
+  color: black;
+  text-decoration: none;
+  margin-left: 26px;
+}
+
+.back-button span:hover {
+  text-decoration: underline;
+}
+
 /*** Not Found Page ***/
 
 .not-found-container {
