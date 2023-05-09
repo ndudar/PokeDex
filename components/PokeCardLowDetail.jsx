@@ -20,8 +20,15 @@ export default function PokeCardLowDetail(props) {
     fetchData()
   }, [url])
 
+  let typeMatch = false
+  if (poke) {
+    poke.types.forEach((typeObj) => {
+      if (typeObj.type.name === typeFilter) typeMatch = true
+    })
+  }
+
   return (
-    poke &&
+    poke && typeMatch ?
     <Link to={`/pokemon/${poke.id}`}>
     <div className="pokemon-tile">
       <img src={poke.sprites.front_default}/>
@@ -29,6 +36,6 @@ export default function PokeCardLowDetail(props) {
        <h3>{poke.name}</h3>
       </div>
     </div>
-    </Link>
+    </Link> : null
   )
 }
