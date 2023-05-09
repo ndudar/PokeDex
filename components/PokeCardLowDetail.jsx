@@ -6,7 +6,10 @@ import { getSinglePokemon } from "../api"
 
 export default function PokeCardLowDetail(props) {
   const url = props.pokemon.url
+  const typeFilter = props.typeFilter
   const [poke, setPoke] = useState(null)
+
+  console.log("typeFilter:", typeFilter)
 
   //since we don't have access to the poke id, we make the api call with the url
   useEffect(() => {

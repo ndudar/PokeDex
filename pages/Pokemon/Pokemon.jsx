@@ -39,7 +39,7 @@ export default function Pokemon() {
     //this might be where I filter?
 
     const pokemonsElements = displayedPokemons.map((pokemon) => (
-      <PokeCardLowDetail pokemon={pokemon} key={pokemon.name}/>
+      <PokeCardLowDetail pokemon={pokemon} key={pokemon.name} typeFilter={typeFilter} />
     ))
 
     return (
