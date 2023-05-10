@@ -139,6 +139,96 @@ footer {
   color: #FFEAD0;
 }
 
+.pokemon-button.normal:hover,
+.pokemon-button.normal.selected {
+    background-color: #decd13;
+}
+
+.pokemon-button.fire:hover,
+.pokemon-button.fire.selected {
+    background-color: #de2713;
+}
+
+.pokemon-button.water:hover,
+.pokemon-button.water.selected {
+    background-color: #13a5de;
+}
+
+.pokemon-button.grass:hover,
+.pokemon-button.grass.selected {
+    background-color: #13de57;
+}
+
+.pokemon-button.flying:hover,
+.pokemon-button.flying.selected {
+    background-color: #13d1de;
+}
+
+.pokemon-button.fighting:hover,
+.pokemon-button.fighting.selected {
+    background-color: #dea513;
+}
+
+.pokemon-button.poison:hover,
+.pokemon-button.poison.selected {
+    background-color: #8613de;
+}
+
+.pokemon-button.electric:hover,
+.pokemon-button.electric.selected {
+    background-color: #a5de13;
+}
+
+.pokemon-button.ground:hover,
+.pokemon-button.ground.selected {
+    background-color: #ad800d;
+}
+
+.pokemon-button.rock:hover,
+.pokemon-button.rock.selected {
+    background-color: #798a83;
+}
+
+.pokemon-button.psychic:hover,
+.pokemon-button.psychic.selected {
+    background-color: #4016ac;
+}
+
+.pokemon-button.ice:hover,
+.pokemon-button.ice.selected {
+    background-color: #75ceeb;
+}
+
+.pokemon-button.bug:hover,
+.pokemon-button.bug.selected {
+    background-color: #96e640;
+}
+
+.pokemon-button.ghost:hover,
+.pokemon-button.ghost.selected {
+    background-color: #2c4b6b;
+}
+
+.pokemon-button.steel:hover,
+.pokemon-button.steel.selected {
+    background-color: #8c8c86;
+}
+
+.pokemon-button.dragon:hover,
+.pokemon-button.dragon.selected {
+    background-color: #19961d;
+}
+
+.pokemon-button.dark:hover,
+.pokemon-button.dark.selected {
+    background-color: #22221a;
+}
+
+.pokemon-button.fairy:hover,
+.pokemon-button.fairy.selected {
+    background-color: #de13d1;
+}
+
 /*** POKEMON DETAIL PAGE ***/
 
 .pokemon-detail-container {
