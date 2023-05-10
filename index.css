@@ -135,6 +135,10 @@ footer {
   outline: none;
 }
 
+.pokemon-button.selected {
+  color: #FFEAD0;
+}
+
 /*** POKEMON DETAIL PAGE ***/
 
 .pokemon-detail-container {

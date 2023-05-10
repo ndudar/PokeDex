@@ -39,34 +39,146 @@ export default function Pokemon() {
     //this might be where I filter?
 
     const pokemonsElements = displayedPokemons.map((pokemon) => (
-      <PokeCardLowDetail pokemon={pokemon} key={pokemon.name} typeFilter={typeFilter} />
-    ))
+      <PokeCardLowDetail
+        pokemon={pokemon}
+        key={pokemon.name}
+        typeFilter={typeFilter}
+      />
+    ));
 
     return (
       <>
-      <div className="pokemon-filter-buttons">
-        <button className="pokemon-button" onClick={() => handleFilterChange("type", "normal")}>Normal</button>
-        <button className="pokemon-button" onClick={() => handleFilterChange("type", "fire")}>Fire</button>
-        <button className="pokemon-button" onClick={() => handleFilterChange("type", "water")}>Water</button>
-        <button className="pokemon-button" onClick={() => handleFilterChange("type", "grass")}>Grass</button>
-        <button className="pokemon-button" onClick={() => handleFilterChange("type", "flying")}>Flying</button>
-        <button className="pokemon-button" onClick={() => handleFilterChange("type", "fighting")}>Fighting</button>
-        <button className="pokemon-button" onClick={() => handleFilterChange("type", "poison")}>Poison</button>
-        <button className="pokemon-button" onClick={() => handleFilterChange("type", "electric")}>Electric</button>
-        <button className="pokemon-button" onClick={() => handleFilterChange("type", "ground")}>Ground</button>
-        <button className="pokemon-button" onClick={() => handleFilterChange("type", "rock")}>Rock</button>
-        <button className="pokemon-button" onClick={() => handleFilterChange("type", "psychic")}>Psychic</button>
-        <button className="pokemon-button" onClick={() => handleFilterChange("type", "ice")}>Ice</button>
-        <button className="pokemon-button" onClick={() => handleFilterChange("type", "bug")}>Bug</button>
-        <button className="pokemon-button" onClick={() => handleFilterChange("type", "ghost")}>Ghost</button>
-        <button className="pokemon-button" onClick={() => handleFilterChange("type", "steel")}>Steel</button>
-        <button className="pokemon-button" onClick={() => handleFilterChange("type", "dragon")}>Dragon</button>
-        <button className="pokemon-button" onClick={() => handleFilterChange("type", "dark")}>Dark</button>
-        <button className="pokemon-button" onClick={() => handleFilterChange("type", "fairy")}>Fairy</button>
-      </div>
-      <div className="pokemon-list">{pokemonsElements}</div>
+        <div className="pokemon-filter-buttons">
+          <button
+            className={`pokemon-button normal
+                        ${typeFilter === "normal" ? "selected" : ""}`}
+            onClick={() => handleFilterChange("type", "normal")}
+          >
+            Normal
+          </button>
+          <button
+            className={`pokemon-button fire
+                        ${typeFilter === "fire" ? "selected" : ""}`}
+            onClick={() => handleFilterChange("type", "fire")}
+          >
+            Fire
+          </button>
+          <button
+            className={`pokemon-button water
+                        ${typeFilter === "water" ? "selected" : ""}`}
+            onClick={() => handleFilterChange("type", "water")}
+          >
+            Water
+          </button>
+          <button
+            className={`pokemon-button grass
+                        ${typeFilter === "grass" ? "selected" : ""}`}
+            onClick={() => handleFilterChange("type", "grass")}
+          >
+            Grass
+          </button>
+          <button
+            className={`pokemon-button flying
+                        ${typeFilter === "flying" ? "selected" : ""}`}
+            onClick={() => handleFilterChange("type", "flying")}
+          >
+            Flying
+          </button>
+          <button
+            className={`pokemon-button fighting
+                        ${typeFilter === "fighting" ? "selected" : ""}`}
+            onClick={() => handleFilterChange("type", "fighting")}
+          >
+            Fighting
+          </button>
+          <button
+            className={`pokemon-button poison
+                        ${typeFilter === "poison" ? "selected" : ""}`}
+            onClick={() => handleFilterChange("type", "poison")}
+          >
+            Poison
+          </button>
+          <button
+            className={`pokemon-button electric
+                        ${typeFilter === "electric" ? "selected" : ""}`}
+            onClick={() => handleFilterChange("type", "electric")}
+          >
+            Electric
+          </button>
+          <button
+            className={`pokemon-button ground
+                        ${typeFilter === "ground" ? "selected" : ""}`}
+            onClick={() => handleFilterChange("type", "ground")}
+          >
+            Ground
+          </button>
+          <button
+            className={`pokemon-button rock
+                        ${typeFilter === "rock" ? "selected" : ""}`}
+            onClick={() => handleFilterChange("type", "rock")}
+          >
+            Rock
+          </button>
+          <button
+            className={`pokemon-button psychic
+                        ${typeFilter === "psychic" ? "selected" : ""}`}
+            onClick={() => handleFilterChange("type", "psychic")}
+          >
+            Psychic
+          </button>
+          <button
+            className={`pokemon-button ice
+                        ${typeFilter === "ice" ? "selected" : ""}`}
+            onClick={() => handleFilterChange("type", "ice")}
+          >
+            Ice
+          </button>
+          <button
+            className={`pokemon-button bug
+                        ${typeFilter === "bug" ? "selected" : ""}`}
+            onClick={() => handleFilterChange("type", "bug")}
+          >
+            Bug
+          </button>
+          <button
+            className={`pokemon-button ghost
+                        ${typeFilter === "ghost" ? "selected" : ""}`}
+            onClick={() => handleFilterChange("type", "ghost")}
+          >
+            Ghost
+          </button>
+          <button
+            className={`pokemon-button steel
+                        ${typeFilter === "steel" ? "selected" : ""}`}
+            onClick={() => handleFilterChange("type", "steel")}
+          >
+            Steel
+          </button>
+          <button
+            className={`pokemon-button dragon
+                        ${typeFilter === "dragon" ? "selected" : ""}`}
+            onClick={() => handleFilterChange("type", "dragon")}
+          >
+            Dragon
+          </button>
+          <button
+            className={`pokemon-button dark
+                        ${typeFilter === "dark" ? "selected" : ""}`}
+            onClick={() => handleFilterChange("type", "dark")}
+          >
+            Dark
+          </button>
+          <button
+            className={`pokemon-button fairy
+                        ${typeFilter === "fairy" ? "selected" : ""}`}
+            onClick={() => handleFilterChange("type", "fairy")}
+          >
+            Fairy
+          </button>
+        </div>
+        <div className="pokemon-list">{pokemonsElements}</div>
       </>
-    )
+    );
   }
 
   return (
