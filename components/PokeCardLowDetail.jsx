@@ -21,6 +21,7 @@ export default function PokeCardLowDetail(props) {
   }, [url])
 
   let typeMatch = false
+  if (!typeFilter) typeMatch = true
   if (poke) {
     poke.types.forEach((typeObj) => {
       if (typeObj.type.name === typeFilter) typeMatch = true
