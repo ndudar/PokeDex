@@ -229,6 +229,19 @@ footer {
     background-color: #de13d1;
 }
 
+.pokemon-button.clear-filters {
+  margin-left: -20px;
+  height: 34px;
+  padding: 6px 26px;
+  font-style: normal;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  text-decoration: underline;
+  background-color: transparent;
+  color: #4D4D4D;
+}
+
 /*** POKEMON DETAIL PAGE ***/
 
 .pokemon-detail-container {

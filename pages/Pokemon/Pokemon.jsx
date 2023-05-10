@@ -178,6 +178,16 @@ export default function Pokemon() {
           >
             Fairy
           </button>
+
+          {typeFilter ? (
+            <button
+              onClick={() => handleFilterChange("type", null)}
+              className="pokemon-button clear-filters"
+            >
+              Clear Filter
+            </button>
+          ) : null}
+
         </div>
         <div className="pokemon-list">{pokemonsElements}</div>
       </>
