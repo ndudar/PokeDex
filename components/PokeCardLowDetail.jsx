@@ -30,7 +30,7 @@ export default function PokeCardLowDetail(props) {
 
   return (
     poke && typeMatch ?
-    <Link to={`/pokemon/${poke.id}`}>
+    <Link to={`/pokemon/${poke.id}`} state={props.state}>
     <div className="pokemon-tile">
       <img src={poke.sprites.front_default}/>
       <div>

@@ -36,13 +36,16 @@ export default function Pokemon() {
   function renderPokemonElements(pokemons) {
     const displayedPokemons = pokemons.results;
 
-    //this might be where I filter?
 
     const pokemonsElements = displayedPokemons.map((pokemon) => (
       <PokeCardLowDetail
         pokemon={pokemon}
         key={pokemon.name}
         typeFilter={typeFilter}
+        state={{
+          search: `?${searchParams.toString()}`,
+          type: typeFilter,
+        }}
       />
     ));
 

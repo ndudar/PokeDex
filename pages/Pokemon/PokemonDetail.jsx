@@ -1,5 +1,5 @@
 import React from "react"
-import { useLoaderData, Outlet, NavLink, Link } from "react-router-dom"
+import { useLoaderData, Outlet, NavLink, Link, useLocation } from "react-router-dom"
 
 //api
 import { getSinglePokemonWithId } from "../../api"
@@ -11,6 +11,11 @@ export function loader({ params }) {
 
 export default function PokemonDetail() {
   const pokemon = useLoaderData()
+  const location = useLocation()
+
+  //grabbing filter info from url
+  const search = location.state?.search || "";
+  const type = location.state?.type || "all";
 
   const activeStyles = {
     fontWeight: "bold",
@@ -20,7 +25,7 @@ export default function PokemonDetail() {
 
   return (
     <div className="pokemon-detail-container">
-      <Link to=".." relative="path" className="back-button">&larr; <span>Back to Pokemon</span></Link>
+      <Link to={`..${search}`} relative="path" className="back-button">&larr; <span>Back to {type} pokemon</span></Link>
     <div className="pokemon-detail">
       <h1>{pokemon.name}</h1>
       <img src={pokemon.sprites.front_default} />
