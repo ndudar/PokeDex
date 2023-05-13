@@ -17,6 +17,8 @@ export default function PokemonDetail() {
   const search = location.state?.search || "";
   const type = location.state?.type || "all";
 
+  console.log(location.state)
+
   const activeStyles = {
     fontWeight: "bold",
     textDecoration: "underline",

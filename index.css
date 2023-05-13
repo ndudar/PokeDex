@@ -248,8 +248,6 @@ footer {
   padding-inline: 27px;
 }
 
-/*** fix for later: image too big ***/
-
 .pokemon-detail {
   display: flex;
   align-items: center;
