@@ -9,8 +9,6 @@ export default function PokeCardLowDetail(props) {
   const typeFilter = props.typeFilter
   const [poke, setPoke] = useState(null)
 
-  console.log("typeFilter:", typeFilter)
-
   //since we don't have access to the poke id, we make the api call with the url
   useEffect(() => {
     async function fetchData() {

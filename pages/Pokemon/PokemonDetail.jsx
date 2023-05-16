@@ -13,11 +13,9 @@ export default function PokemonDetail() {
   const pokemon = useLoaderData()
   const location = useLocation()
 
-  //grabbing filter info from url
-  const search = location.state?.search || "";
+  //grabbing filter info from location state
+  const search = location.state?.search || "/pokemon";
   const type = location.state?.type || "all";
-
-  console.log(location.state)
 
   const activeStyles = {
     fontWeight: "bold",
@@ -27,7 +25,7 @@ export default function PokemonDetail() {
 
   return (
     <div className="pokemon-detail-container">
-      <Link to={`..${search}`} relative="path" className="back-button">&larr; <span>Back to {type} pokemon</span></Link>
+      <Link to={`${search}`} relative="path" className="back-button">&larr; <span>Back to {type} pokemon</span></Link>
     <div className="pokemon-detail">
       <h1>{pokemon.name}</h1>
       <img src={pokemon.sprites.front_default} />
