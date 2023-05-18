@@ -32,7 +32,7 @@ export default function PokemonDetail() {
 
   return (
     <div className="pokemon-detail-container">
-      <Link to={`..${search}`} relative="path" className="back-button">
+      <Link to={`/pokemon${search}`} className="back-button">
         &larr; <span>Back to {type} pokemon</span>
       </Link>
       <div className="pokemon-detail">
