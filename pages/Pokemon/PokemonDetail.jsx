@@ -18,7 +18,6 @@ export function loader({ params }) {
 export default function PokemonDetail() {
   const pokemon = useLoaderData();
   const location = useLocation();
-  console.log(location);
 
   //grabbing filter info from location state
   const search = location.state?.search || "";
