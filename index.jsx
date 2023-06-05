@@ -10,7 +10,7 @@ import {
 //components and pages
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
-import Login from "./pages/Login";
+import Login, { action as loginAction, loader as loginLoader } from "./pages/Login";
 import Pokemon, { loader as pokemonLoader } from "./pages/Pokemon/Pokemon";
 import PokemonDetail, {
   loader as pokemonDetailLoader,
@@ -18,6 +18,7 @@ import PokemonDetail, {
 import PokemonEvolution from "./pages/Pokemon/PokemonEvolution";
 import PokemonMoves from "./pages/Pokemon/PokemonMoves";
 import PokemonStats from "./pages/Pokemon/PokemonStats";
+import SecretHome from "./pages/Secrets/SecretHome";
 
 //sad path
 import NotFound from "./pages/NotFound";
@@ -27,7 +28,11 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route index element={<Home />} />
-      <Route path="login" element={<Login />} />
+      <Route path="login"
+      element={<Login />}
+      action={loginAction}
+      loader={loginLoader}
+      />
       <Route
         path="pokemon"
         element={<Pokemon />}
@@ -56,6 +61,10 @@ const router = createBrowserRouter(
           errorElement={<Error />}
         />
       </Route>
+      <Route path="secrets"
+      element={<SecretHome />}
+      errorElement={<Error />}
+      />
       <Route path="*" element={<NotFound />} />
     </Route>
   )
