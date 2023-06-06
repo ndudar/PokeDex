@@ -10,7 +10,7 @@ import {
 //components and pages
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
-import Login, { action as loginAction, loader as loginLoader } from "./pages/Login";
+import Login, { loader as loginLoader } from "./pages/Login";
 import Pokemon, { loader as pokemonLoader } from "./pages/Pokemon/Pokemon";
 import PokemonDetail, {
   loader as pokemonDetailLoader,
@@ -33,7 +33,6 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="login"
       element={<Login />}
-      action={loginAction}
       loader={loginLoader}
       />
       <Route
