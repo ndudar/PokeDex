@@ -20,6 +20,9 @@ import PokemonMoves from "./pages/Pokemon/PokemonMoves";
 import PokemonStats from "./pages/Pokemon/PokemonStats";
 import SecretHome from "./pages/Secrets/SecretHome";
 
+//protected route
+import { requireAuth } from "./utils";
+
 //sad path
 import NotFound from "./pages/NotFound";
 import Error from "./components/Error";
@@ -64,6 +67,7 @@ const router = createBrowserRouter(
       <Route path="secrets"
       element={<SecretHome />}
       errorElement={<Error />}
+      loader={async ({ request }) => await requireAuth(request)}
       />
       <Route path="*" element={<NotFound />} />
     </Route>
