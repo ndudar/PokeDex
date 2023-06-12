@@ -66,7 +66,6 @@ const router = createBrowserRouter(
       <Route path="secrets"
       element={<SecretHome />}
       errorElement={<Error />}
-      // loader={async ({ request }) => await requireAuth(request)}
       />
       <Route path="*" element={<NotFound />} />
     </Route>

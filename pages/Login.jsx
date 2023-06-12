@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import {
   Form,
@@ -34,13 +34,24 @@ export default function Login() {
   const [errorMessage, setErrorMessage] = useState(null)
   const navigate = useNavigate()
 
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem("loggedin");
+
+    if (isLoggedIn === "true") {
+      navigate("/secrets");
+    }
+  }, [navigate]);
+
   const handleSubmit = (evt) => {
     evt.preventDefault();
     const check = secretPassword(password)
     if (check) {
       localStorage.setItem("loggedin", true);
+      console.log(localStorage)
       navigate("/secrets");
     } else {
+      localStorage.setItem("loggedin", false)
+      console.log(localStorage)
       setErrorMessage("Nope! You must say the secret password!")
     }
   };
