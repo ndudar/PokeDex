@@ -3,8 +3,6 @@ import React, { useState, useEffect } from "react";
 import {
   Form,
   useNavigation,
-  useActionData,
-  useLoaderData,
   useNavigate,
 } from "react-router-dom";
 
@@ -14,22 +12,8 @@ export function loader({ request }) {
   return new URL(request.url).searchParams.get("message");
 }
 
-// export async function action({ request }) {
-//   const formData = await request.formData();
-//   const password = formData.get('password');
-//   const pathname = '/secrets'
-//   try {
-//     const data = await secretPassword(password)
-//     if (data) localStorage.setItem("loggedin", true)
-//     return redirect(pathname)
-//   } catch (err) {
-//     return err.message
-//   }
-// }
-
 export default function Login() {
   const navigation = useNavigation();
-  //const errorMessage = useActionData()
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(null)
   const navigate = useNavigate()

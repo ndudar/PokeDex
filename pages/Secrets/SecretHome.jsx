@@ -1,18 +1,15 @@
 import React from "react"
-import { useLoaderData, useNavigate } from "react-router-dom";
-
-//import { requireAuth } from "../../utils";
-
-// export async function loader({ request }) {
-//   console.log('secret loader', localStorage)
-//   await requireAuth(request);
-//   return {}
-// }
+import { useNavigate } from "react-router-dom";
 
 export default function SecretHome() {
-  //const data = useLoaderData();
   const passwordCheck = localStorage.loggedin
   const navigate = useNavigate()
+
+  const handleLogout = () => {
+    localStorage.setItem("loggedin", false)
+    navigate('/login')
+  };
+
 
   if (passwordCheck === 'false') {
     return (
@@ -25,6 +22,7 @@ export default function SecretHome() {
     return (
       <div>
         <h1>I'm secret stuff!</h1>
+        <button onClick={() => handleLogout()}>Log Out</button>
       </div>
     )
   }
