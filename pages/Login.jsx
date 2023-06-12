@@ -1,11 +1,17 @@
-import React from "react"
+import React, { useState } from "react";
 
-import { Form, redirect, useNavigation, useActionData, useLoaderData } from "react-router-dom"
+import {
+  Form,
+  useNavigation,
+  useActionData,
+  useLoaderData,
+  useNavigate,
+} from "react-router-dom";
 
-import { secretPassword } from "../utils"
+import { secretPassword } from "../utils";
 
 export function loader({ request }) {
-  return new URL(request.url).searchParams.get("message")
+  return new URL(request.url).searchParams.get("message");
 }
 
 // export async function action({ request }) {
@@ -22,28 +28,41 @@ export function loader({ request }) {
 // }
 
 export default function Login() {
-  const navigation = useNavigation()
+  const navigation = useNavigation();
   //const errorMessage = useActionData()
-  const message = useLoaderData()
+  const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState(null)
+  const navigate = useNavigate()
 
-  function handleSubmit(evt) {
-    evt.preventDefault()
-    if (secretPassword(evt.target.value)) {
-      localStorage.setItem('loggedin', true)
-      return redirect('/secrets')
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    const check = secretPassword(password)
+    if (check) {
+      localStorage.setItem("loggedin", true);
+      navigate("/secrets");
+    } else {
+      setErrorMessage("Nope! You must say the secret password!")
     }
-  }
+  };
 
   return (
     <div className="login-container">
       <h1>What's the secret password?</h1>
-      {message && <h3>{message}</h3>}
-      <Form className="login-form" >
-        <input name="password" type="password" placeholder="Password"/>
-        <button onClick={handleSubmit} type='submit' disabled={navigation.state === "submitting"}>
-          {navigation.state === "submitting" ? "Super secret things happening..." : "Knock Knock"}
+      {errorMessage && <h3>{errorMessage}</h3>}
+      <Form className="login-form" onSubmit={handleSubmit}>
+        <input
+          name="password"
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(evt) => setPassword(evt.target.value)}
+        />
+        <button type="submit" disabled={navigation.state === "submitting"}>
+          {navigation.state === "submitting"
+            ? "Super secret things happening..."
+            : "Knock Knock"}
         </button>
       </Form>
     </div>
-  )
+  );
 }
