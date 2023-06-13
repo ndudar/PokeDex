@@ -125,6 +125,8 @@ footer {
   background-color: #E17654;
   color: #4D4D4D;
   transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
+  width:  10vw;
+  margin-bottom: 5px;
 }
 
 .pokemon-button:hover {
