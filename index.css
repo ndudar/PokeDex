@@ -84,7 +84,7 @@ footer {
 }
 
 .pokemon-list-container button {
-  margin-right: 20px;
+  margin-right: 30px;
   cursor: pointer;
 }
 
@@ -92,9 +92,22 @@ footer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
-  gap: 34px;
-  margin-top: 57px;
+  gap: 25px;
+  margin-top: 50px;
 }
+
+@media (min-width: 768px) {
+  .pokemon-list {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+/* .pokemon-tile {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  flex-shrink: 1;
+} */
 
 .pokemon-tile h3 {
   color: #161616;
