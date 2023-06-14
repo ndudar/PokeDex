@@ -4,6 +4,9 @@ export default function Home() {
   return (
     <div>
       <h1>I'm the home page!</h1>
+      <div className="pokeball-container">
+        <div className="pokeball"></div>
+      </div>
     </div>
   )
 }

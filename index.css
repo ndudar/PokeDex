@@ -323,6 +323,21 @@ footer {
   text-decoration: underline;
 }
 
+/*** HOME PAGE ***/
+.pokeball-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+
+}
+
+.pokeball {
+  height: 250px;
+  width: 250px;
+  border: 13px solid #383b4f;
+}
+
 /*** Not Found Page ***/
 
 .not-found-container {
