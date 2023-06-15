@@ -10,6 +10,7 @@ import {
 //components and pages
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
+import RandomGenerator from "./pages/RandomGenerator";
 import Login, { loader as loginLoader } from "./pages/Login";
 import Pokemon, { loader as pokemonLoader } from "./pages/Pokemon/Pokemon";
 import PokemonDetail, {
@@ -31,9 +32,16 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route index element={<Home />} />
-      <Route path="login"
-      element={<Login />}
-      loader={loginLoader}
+      <Route
+        path="randomize"
+        element={<RandomGenerator />}
+        errorElement={<Error />}
+      />
+      <Route
+        path="login"
+        element={<Login />}
+        loader={loginLoader}
+        errorElement={<Error />}
       />
       <Route
         path="pokemon"
@@ -63,10 +71,7 @@ const router = createBrowserRouter(
           errorElement={<Error />}
         />
       </Route>
-      <Route path="secrets"
-      element={<SecretHome />}
-      errorElement={<Error />}
-      />
+      <Route path="secrets" element={<SecretHome />} errorElement={<Error />} />
       <Route path="*" element={<NotFound />} />
     </Route>
   )
