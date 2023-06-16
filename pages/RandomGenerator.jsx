@@ -31,7 +31,7 @@ export default function RandomGenerator() {
     <div>
       <h1>I'm the random generator</h1>
       <p>Name: {randomPokemon.name}</p>
-      <img src={randomPokemon.sprites.front_default}/>
+      {/* <img src={randomPokemon.sprites.front_default}/> */}
       <p>Height: {randomPokemon.height}</p>
       <p>Weight: {randomPokemon.weight}</p>
     </div>
