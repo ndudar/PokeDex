@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom"
 
 //bringing in Pokedex library
 import Pokedex from 'pokedex-promise-v2';
 const P = new Pokedex();
 
-//api
-import { getSinglePokemon } from "../api"
-
 export default function RandomPokemonCard(props) {
   const [poke, setPoke] = useState(null)
 
+  //grabbing more comprehensive data from the Pokedex library
   useEffect(() => {
     async function fetchData() {
       const pokemon = await P.getPokemonByName(props.randomPokemon.name);
@@ -18,18 +17,10 @@ export default function RandomPokemonCard(props) {
     fetchData()
   }, [])
 
-  //since we don't have access to the poke id, we make the api call with the url
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     const response = await getSinglePokemon(url)
-  //     setPoke(response)
-  //   }
-  //   fetchData()
-  // }, [url])
-
   return (
     poke &&
     <div>
+      <button onClick={() => window.location.reload()}>Randomize Again!</button>
       <p>Name: {poke.name}</p>
       <p>Height: {poke.height}</p>
       <p>Weight: {poke.weight}</p>
