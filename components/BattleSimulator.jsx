@@ -36,7 +36,7 @@ export default function BattleSimulator() {
         <p>Name: {poke2.name}</p>
         <img src={poke2.sprites.front_default}></img>
       </div>
-      <div>I'm the battle simlulator!</div>
+      <div>I'm the battle simulator!</div>
     </div> : null
   );
 }
