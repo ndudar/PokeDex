@@ -11,15 +11,6 @@ export default function BattleSimulator() {
   const [poke1, setPoke1] = useState(null);
   const [poke2, setPoke2] = useState(null);
 
-  // async function fetchRandomPokemon() {
-  //   try {
-  //     const response = await getRandomPokemon();
-  //     return response
-  //   } catch (err) {
-  //     console.error(err)
-  //   }
-  // }
-
   useEffect(() => {
     async function fetchData() {
       const response1 = await getRandomPokemon();
@@ -49,17 +40,3 @@ export default function BattleSimulator() {
     </div> : null
   );
 }
-
-// useEffect(() => {
-//   fetchRandomPokemon()
-//   .then((response) => setRandomPokemon(response))
-// }, [])
-
-// useEffect(() => {
-//   async function fetchData() {
-//     const pokemon = await P.getPokemonByName(props.randomPokemon.name);
-//     console.log(pokemon);
-//     setPoke(pokemon)
-//   }
-//   fetchData()
-// }, [])
