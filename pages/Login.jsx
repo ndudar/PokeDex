@@ -31,11 +31,9 @@ export default function Login() {
     const check = secretPassword(password)
     if (check) {
       localStorage.setItem("loggedin", true);
-      console.log(localStorage)
       navigate("/secrets");
     } else {
       localStorage.setItem("loggedin", false)
-      console.log(localStorage)
       setErrorMessage("Nope! You must say the secret password!")
     }
   };
