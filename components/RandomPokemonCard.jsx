@@ -12,6 +12,7 @@ export default function RandomPokemonCard(props) {
   useEffect(() => {
     async function fetchData() {
       const pokemon = await P.getPokemonByName(props.randomPokemon.name);
+      console.log(pokemon);
       setPoke(pokemon)
     }
     fetchData()
@@ -24,7 +25,7 @@ export default function RandomPokemonCard(props) {
       <p>Name: {poke.name}</p>
       <p>Height: {poke.height}</p>
       <p>Weight: {poke.weight}</p>
-      <img src={poke.sprites.front_default}></img>
+      <Link to={`/pokemon/${poke.id}`}><img src={poke.sprites.front_default}></img></Link>
       <p>Types:</p>
       {poke.types.map((type) => (
         <p key={type.type.name}>{type.type.name}</p>
