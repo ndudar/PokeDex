@@ -8,59 +8,54 @@ const P = new Pokedex();
 //api
 import { getRandomPokemon } from "../api";
 
+//components
+import RandomPokemonCard from "../components/RandomPokemonCard";
+
 //grabs random pokemon
-export function loader() {
-  return defer({ pokemon: getRandomPokemon() });
-}
+// export function loader() {
+//   return defer({ pokemon: getRandomPokemon() });
+// }
 
 export default function RandomGenerator() {
-  // const [randomPokemon, setRandomPokemon] = useState({});
+  const [randomPokemon, setRandomPokemon] = useState(null);
 
-  // async function fetchRandomPokemon() {
-  //   try {
-  //     const response = await getRandomPokemon();
-  //     const pokeName = response.name;
-  //     const pokemon = await P.getPokemonByName(pokeName)
-  //     return pokemon
-  //   } catch (err) {
-  //     console.error(err)
-  //   }
-  // }
-
-  // useEffect(() => {
-  //   fetchRandomPokemon()
-  //   .then((response) => setRandomPokemon(response))
-  // }, [])
-  const dataPromise = useLoaderData();
-
-  async function renderRandomPokemon(pokemon) {
-    // const displayedPokemon = pokemon;
-    // console.log(displayedPokemon);
-    const randomPokemon = async (pokemon) => {
-      const pokeName = pokemon.name;
-      const result = await P.getPokemonByName(pokeName);
-      return result
+  async function fetchRandomPokemon() {
+    try {
+      const response = await getRandomPokemon();
+      // const pokeName = response.name;
+      // const pokemon = await P.getPokemonByName(pokeName)
+      return response
+    } catch (err) {
+      console.error(err)
     }
-    const displayedPokemon = await randomPokemon(pokemon);
-    console.log(displayedPokemon);
-
-    return (
-      <div>
-        <h1>We're in the render random!</h1>
-      <p>Name: {displayedPokemon.name}</p>
-      <img src={displayedPokemon.sprites.front_default}/>
-      <p>Height: {displayedPokemon.height}</p>
-      <p>Weight: {displayedPokemon.weight}</p>
-    </div>
-    )
-
   }
 
+  useEffect(() => {
+    fetchRandomPokemon()
+    .then((response) => setRandomPokemon(response))
+  }, [])
+
+  //const dataPromise = useLoaderData();
+
+  // function renderRandomPokemon(pokemon) {
+  //   const displayedPokemon = pokemon;
+  //   console.log(displayedPokemon);
+
+  //   return (
+  //     <div>
+  //       <RandomGenerator displayedPokemon={displayedPokemon} />
+  //     </div>
+  //   )
+
+  // }
+
   return (
+    randomPokemon && 
     <div>
-      <React.Suspense fallback={<h2>Loading random pokemon...</h2>}>
+      {/* <React.Suspense fallback={<h2>Loading random pokemon...</h2>}>
         <Await resolve={dataPromise.pokemon}>{renderRandomPokemon}</Await>
-      </React.Suspense>
+      </React.Suspense> */}
+      <RandomPokemonCard randomPokemon={randomPokemon} />
     </div>
   )
 }

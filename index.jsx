@@ -10,7 +10,7 @@ import {
 //components and pages
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
-import RandomGenerator, { loader as randomPokemonLoader } from "./pages/RandomGenerator";
+import RandomGenerator from "./pages/RandomGenerator";
 import Login, { loader as loginLoader } from "./pages/Login";
 import Pokemon, { loader as pokemonLoader } from "./pages/Pokemon/Pokemon";
 import PokemonDetail, {
@@ -36,7 +36,6 @@ const router = createBrowserRouter(
         path="randomize"
         element={<RandomGenerator />}
         errorElement={<Error />}
-        loader={randomPokemonLoader}
       />
       <Route
         path="login"
