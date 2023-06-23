@@ -12,7 +12,6 @@ export default function RandomPokemonCard(props) {
   useEffect(() => {
     async function fetchData() {
       const pokemon = await P.getPokemonByName(props.randomPokemon.name);
-      console.log(pokemon);
       setPoke(pokemon)
     }
     fetchData()
