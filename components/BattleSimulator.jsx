@@ -1,10 +1,10 @@
-import React, { useState, useEffect }  from "react";
+import React, { useState, useEffect } from "react";
 
 //api
 import { getRandomPokemon } from "../api";
 
 //bringing in Pokedex library
-import Pokedex from 'pokedex-promise-v2';
+import Pokedex from "pokedex-promise-v2";
 const P = new Pokedex();
 
 //components
@@ -24,20 +24,13 @@ export default function BattleSimulator() {
       setPoke2(pokemon2);
     }
     fetchData();
-  }, [])
+  }, []);
 
-      // const poke1HP = poke1.stats[0].base_stat
-      // const poke1Attack = poke1.stats[1].base_stat
-      // const poke1Defense = poke1.stats[2].base_stat
-      // const poke1Moves = poke1.moves
+  // const poke1Moves = poke1.moves
 
-      // const poke2HP = poke2.stats[0].base_stat
-      // const poke2Attack = poke2.stats[1].base_stat
-      // const poke2Defense = poke2.stats[2].base_stat
-      // const poke2Moves = poke2.moves
+  // const poke2Moves = poke2.moves
 
-  return (
-    poke1 && poke2 ?
+  return poke1 && poke2 ? (
     <div className="battle-simulator">
       <div className="poke1">
         <p>Name: {poke1.name}</p>
@@ -49,8 +42,19 @@ export default function BattleSimulator() {
         <img src={poke2.sprites.front_default}></img>
       </div>
       <div>
-        <BattleProgram />
+        <BattleProgram
+          poke1HP={poke1.stats[0].base_stat}
+          poke2HP={poke2.stats[0].base_stat}
+          poke1Attack={poke1.stats[1].base_stat}
+          poke2Attack={poke2.stats[1].base_stat}
+          poke1Defense={poke1.stats[2].base_stat}
+          poke2Defense={poke2.stats[2].base_stat}
+          poke1Name={poke1.name}
+          poke2Name={poke2.name}
+          poke1Moves={poke1.moves}
+          poke2Moves={poke2.moves}
+        />
       </div>
-    </div> : null
-  );
+    </div>
+  ) : null;
 }
