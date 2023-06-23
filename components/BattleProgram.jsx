@@ -19,11 +19,12 @@ export default function BattleProgram(props) {
   } = props;
 
   const [currentMove, setCurrentMove] = useState(null);
+  const [battleText, setBattleText] = useState(`The pokemon are ready to battle!`)
+  const [currentPokemon, setCurrentPokemon] = useState(poke1Name);
+  const [battleButtonText, setBattleButtonText] = useState(`Let's battle!`)
 
   let poke1CurrentHP = poke1HP;
   let poke2CurrentHP = poke2HP;
-  let currentPokemon = poke1Name;
-  let battleText = `${currentPokemon} is ready to start!`;
 
   async function handleClick() {
     const randomMove =
@@ -31,7 +32,9 @@ export default function BattleProgram(props) {
         ? poke1Moves[Math.floor(Math.random() * poke1Moves.length)]
         : poke2Moves[Math.floor(Math.random() * poke2Moves.length)];
     console.log(randomMove);
-    battleText = `${currentPokemon} uses ${randomMove.move.name}!`
+    setBattleText(`${currentPokemon} uses ${randomMove.move.name}!`);
+    setCurrentPokemon(currentPokemon === poke1Name ? poke2Name : poke1Name);
+    setBattleButtonText(poke1CurrentHP <= 0 || poke2CurrentHP <= 0 ? `Battle Over!` : `Next Move!`);
   }
 
   //need func for selecting random move and grabbing info from pokedex
@@ -59,7 +62,7 @@ export default function BattleProgram(props) {
       <p>Team 2 Attack: {poke2Attack}</p>
       <p>Team 1 Defense: {poke1Defense}</p>
       <p>Team 2 Defense: {poke2Defense}</p>
-      <button onClick={() => handleClick()}>Let's Battle!</button>
+      <button onClick={() => handleClick()}>{battleButtonText}</button>
       <p>{battleText}</p>
     </div>
   );
