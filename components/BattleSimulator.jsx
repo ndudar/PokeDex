@@ -26,10 +26,6 @@ export default function BattleSimulator() {
     fetchData();
   }, []);
 
-  // const poke1Moves = poke1.moves
-
-  // const poke2Moves = poke2.moves
-
   return poke1 && poke2 ? (
     <div className="battle-simulator">
       <div className="poke1">
