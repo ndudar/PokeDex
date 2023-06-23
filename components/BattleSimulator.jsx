@@ -7,6 +7,9 @@ import { getRandomPokemon } from "../api";
 import Pokedex from 'pokedex-promise-v2';
 const P = new Pokedex();
 
+//components
+import BattleProgram from "./BattleProgram";
+
 export default function BattleSimulator() {
   const [poke1, setPoke1] = useState(null);
   const [poke2, setPoke2] = useState(null);
@@ -40,11 +43,14 @@ export default function BattleSimulator() {
         <p>Name: {poke1.name}</p>
         <img src={poke1.sprites.front_default}></img>
       </div>
+      <h1>VS</h1>
       <div className="poke2">
         <p>Name: {poke2.name}</p>
         <img src={poke2.sprites.front_default}></img>
       </div>
-      <div>I'm the battle simulator!</div>
+      <div>
+        <BattleProgram />
+      </div>
     </div> : null
   );
 }
