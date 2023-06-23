@@ -12,8 +12,3 @@ export default function Home() {
     </div>
   )
 }
-
-
-//random pokemon generator you can click...
-//maybe that links to their individual page?
-//then a random poke card is pulled up
